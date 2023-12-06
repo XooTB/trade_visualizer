@@ -1,0 +1,38 @@
+{% extends "main/base.html" %} {% block extra_css %}
+<link
+  rel="stylesheet"
+  href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css"
+/>
+{% endblock extra_css %} {% block content %}
+<div class="container flex flex-col items-center w-full pt-10">
+  <h1 class="text-2xl">JSON View</h1>
+  <div class="w-3/4 py-16">
+    <table id="datatable" class="cell-border hover">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Trade Code</th>
+          <th>High</th>
+          <th>Low</th>
+          <th>Open</th>
+          <th>Close</th>
+          <th>Volume</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for data in datas %}
+        <tr>
+          <td>{{ data.date }}</td>
+          <td>{{ data.trade_code }}</td>
+          <td>{{ data.high }}</td>
+          <td>{{ data.low }}</td>
+          <td>{{ data.open }}</td>
+          <td>{{ data.close }}</td>
+          <td>{{ data.volume }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
