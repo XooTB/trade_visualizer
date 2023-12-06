@@ -13,6 +13,18 @@ def distict(data):
             appendedCodes.append(i.trade_code)
     return datas
 
+def arrangeData(open, high, low, close):
+    if(type(open) == str):
+        open = float(open.replace(",", '.', 0).replace(",", ''))
+    if(type(high) == str):
+        high = float(high.replace(",", '.', 0).replace(",", ''))
+    if(type(low) == str):
+        low = float(low.replace(",", '.', 0).replace(",", ''))
+    if(type(close) == str):
+        close = float(close.replace(",", '.', 0).replace(",", ''))
+
+    return [open, high, low, close]
+
 # Create your views here.
 def index(request):
     file = open("main/data.json", "r")
@@ -32,10 +44,15 @@ def detailedView(request, tradeCode):
     stepcount = []
     candleData = []
     for i in datas:
-        stepcount.append({"y": i.close, "label": str(i.date)})
+        if(type(i.close) == str):
+            close = float(i.close.replace(",", '.', 0).replace(",", ''))
+        else: 
+            close = i.close
+        
+        stepcount.append({"y": close, "label": str(i.date)})
 
     for i in datas:
         utime = time.mktime(datetime.strptime(str(i.date), "%Y-%m-%d").timetuple()) * 1000
-        candleData.append({"x": utime , "y": [i.open, i.high, i.low, i.close]})
+        candleData.append({"x": utime , "y": arrangeData(i.open, i.high, i.low, i.close)})
 
     return render(request, 'main/detailedView.html', {'datas': datas, 'tradeCode': tradeCode, "stepcount": stepcount, "candleData": candleData})
