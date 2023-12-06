@@ -4,7 +4,7 @@
   href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.css"
 />
 {% endblock extra_css %} {% block content %}
-<div class="container flex flex-col items-center w-full pt-10">
+<div class="container flex flex-col items-center w-full pt-10 font-mono">
   <h1 class="text-2xl">Database View</h1>
   <div class="w-3/4 py-16">
     <table id="datatable" class="cell-border hover">
@@ -25,7 +25,13 @@
         <tr>
           <td>{{ data.id }}</td>
           <td>{{ data.date }}</td>
-          <td>{{ data.trade_code }}</td>
+          <td>
+            <a
+              href="{% url 'detailview' data.trade_code %}"
+              class="hover:text-blue-500 underline"
+              >{{ data.trade_code }}</a
+            >
+          </td>
           <td>{{ data.high }}</td>
           <td>{{ data.low }}</td>
           <td>{{ data.open }}</td>

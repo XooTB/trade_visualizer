@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Visualizer</title>
+    <title>Trade Visualizer</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -15,7 +15,9 @@
 
   <body class="bg-gray-50 font-serif leading-normal tracking-normal">
     <nav class="h-20 bg-gray-400 flex items-center justify-between px-10">
-      <h1 class="text-2xl">Visualizer</h1>
+      <a href="/" class="hover:text-blue-700">
+        <h1 class="text-3xl font-mono font-semibold">V_lizer</h1>
+      </a>
       <ul class="flex gap-5 justify-center">
         <li
           class="hover:bg-slate-200 px-4 py-2 rounded-lg hover:transition hover:cursor-pointer duration-75 font-medium"
@@ -50,6 +52,7 @@
     crossorigin="anonymous"
   ></script>
   <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.js"></script>
+  <script src="https://cdn.canvasjs.com/ga/canvasjs.min.js"></script>
   <script>
     $(document).ready(function () {
       $("#datatable").DataTable({
