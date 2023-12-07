@@ -11,6 +11,9 @@ class dataResource(resources.ModelResource):
         model = data
 
 class dataAdmin(ImportExportModelAdmin):
+    """
+    Admin class for managing data.
+    """
     list_display = ['date', 'trade_code', 'high', 'low', 'open', 'close', 'volume']
     search_fields = ['trade_code']
     resource_class = dataResource

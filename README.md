@@ -36,3 +36,5 @@ Instead of showing each entry individually, they are grouped up together. More d
 Charts and graphs can also be found in the individual detailed page for each company. As putting them on top of the table makes it look really ugly.
 
 Please checkout the detailed pages for each company to see how their stocks price is doing.
+
+The Styling for the website was done with [TailwindCSS](https://tailwindcss.com/).
