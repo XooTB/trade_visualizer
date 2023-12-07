@@ -14,33 +14,37 @@
   </head>
 
   <body class="bg-gray-50 font-serif leading-normal tracking-normal">
-    <nav class="h-20 bg-gray-400 flex items-center justify-between px-10">
-      <a href="/" class="hover:text-blue-700">
+    <nav
+      class="h-20 flex items-center justify-between px-10 bg-[#0E1C26] text-white"
+    >
+      <a href="/" class="hover:text-[#2A454B]">
         <h1 class="text-3xl font-mono font-semibold">V_Lizer</h1>
       </a>
       <ul class="flex gap-5 justify-center">
         <li
-          class="hover:bg-slate-200 px-4 py-2 rounded-lg hover:transition hover:cursor-pointer duration-75 font-medium"
+          class="hover:bg-[#172A32] px-4 py-2 rounded-lg hover:transition hover:cursor-pointer duration-75 font-medium"
         >
           <a href="/">Home</a>
         </li>
         <li
-          class="hover:bg-slate-200 px-4 py-2 rounded-lg hover:transition hover:cursor-pointer duration-75 font-medium"
+          class="hover:bg-[#172A32] px-4 py-2 rounded-lg hover:transition hover:cursor-pointer duration-75 font-medium"
         >
           <a href="/tableview">Database View</a>
         </li>
         <li
-          class="hover:bg-slate-200 px-4 py-2 rounded-lg hover:transition hover:cursor-pointer duration-75 font-medium"
+          class="hover:bg-[#172A32] px-4 py-2 rounded-lg hover:transition hover:cursor-pointer duration-75 font-medium"
         >
           <a>Contact</a>
         </li>
       </ul>
     </nav>
-    <section class="min-h-screen w-full flex justify-center">
+    <section
+      class="min-h-screen w-full flex justify-center bg-[#13232C] text-[#FFFFFF]"
+    >
       {% block content %} {% endblock content %}
     </section>
     <footer>
-      <div class="h-20 bg-gray-400 flex items-center justify-center">
+      <div class="h-20 bg-[#0E1C26] flex items-center justify-center">
         <p class="text-center font-semibold font-mono">© 2023</p>
       </div>
     </footer>
